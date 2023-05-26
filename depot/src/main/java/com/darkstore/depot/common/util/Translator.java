@@ -9,6 +9,7 @@ import java.util.Locale;
 @Component
 public class Translator {
 
+
     private static ResourceBundleMessageSource bundleMessageSource;
 
     public Translator(ResourceBundleMessageSource bundleMessageSource) {
