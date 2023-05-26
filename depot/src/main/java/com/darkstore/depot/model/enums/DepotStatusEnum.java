@@ -1,6 +1,6 @@
 package com.darkstore.depot.model.enums;
 
-public enum DepotStatus {
+public enum DepotStatusEnum {
     OPEN,
     CLOSED
 }

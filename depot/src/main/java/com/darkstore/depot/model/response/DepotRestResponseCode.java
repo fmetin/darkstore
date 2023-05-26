@@ -7,5 +7,11 @@ public class DepotRestResponseCode extends RestResponseCode {
         super(responseCode, responseMessage);
     }
 
-    public static final RestResponseCode DPT_UNKNOWN_ERROR = new RestResponseCode("DPT-0001", DepotRestResponseMessage.MSG_DPT_UNKNOWN_ERROR);
+    public static final RestResponseCode DPT_UNIQUE_DEPOT = new RestResponseCode("DPT-0001", DepotRestResponseMessage.MSG_DPT_UNIQUE_DEPOT);
+    public static final RestResponseCode DPT_MAIN_DEPOT_CANNOT_BE_MORE_THAN_ONE = new RestResponseCode("DPT-0002", DepotRestResponseMessage.MSG_DPT_MAIN_DEPOT_CANNOT_BE_MORE_THAN_ONE);
+    public static final RestResponseCode DPT_PRODUCT_ALREADY_EXIST = new RestResponseCode("DPT-0003", DepotRestResponseMessage.MSG_DPT_PRODUCT_ALREADY_EXIST);
+    public static final RestResponseCode DPT_STOCK_ONLY_CAN_BE_DEFINED_TO_MAIN_DEPOT = new RestResponseCode("DPT-0004", DepotRestResponseMessage.MSG_DPT_STOCK_ONLY_CAN_BE_DEFINED_TO_MAIN_DEPOT);
+    public static final RestResponseCode DPT_DEPOT_DOESNT_EXIST = new RestResponseCode("DPT-0005", DepotRestResponseMessage.MSG_DPT_DEPOT_DOESNT_EXIST);
+    public static final RestResponseCode DPT_DEPOT_CLOSED = new RestResponseCode("DPT-0006", DepotRestResponseMessage.MSG_DPT_DEPOT_CLOSED);
+    public static final RestResponseCode DPT_PRODUCT_DOESNT_EXIST = new RestResponseCode("DPT-0007", DepotRestResponseMessage.MSG_DPT_PRODUCT_DOESNT_EXIST);
 }

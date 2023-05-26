@@ -34,17 +34,4 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-                <includes>
-                    <include>**/*.yml</include>
-                    <include>**/*.json</include>
-                </includes>
-            </resource>
-        </resources>
-    </build>
-
 </project>

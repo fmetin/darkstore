@@ -1,29 +1,30 @@
 package com.darkstore.depot.model.entity;
 
-import com.darkstore.depot.model.enums.DepotStatusEnum;
-import com.darkstore.depot.model.enums.DepotTypeEnum;
+import com.darkstore.depot.model.enums.ProductTypeEnum;
+import com.darkstore.depot.model.enums.ProductUnitTypeEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "Depot")
-public class Depot {
+@Table(name = "Product")
+public class Product {
 
     @Id
-    private String depotName;
+    private String name;
+    private String sku;
+    private String barcode;
     @Enumerated(EnumType.STRING)
-    private DepotTypeEnum type;
-    private String city;
-    private String latitude;
-    private String longitude;
+    private ProductTypeEnum type;
+    private boolean isFrozen;
+    private BigDecimal price;
     @Enumerated(EnumType.STRING)
-    private DepotStatusEnum status;
-    private String costCenter;
+    private ProductUnitTypeEnum unitType;
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime createdDate;
     @Temporal(TemporalType.TIMESTAMP)
