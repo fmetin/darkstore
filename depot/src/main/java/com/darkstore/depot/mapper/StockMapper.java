@@ -3,6 +3,7 @@ package com.darkstore.depot.mapper;
 
 import com.darkstore.depot.common.util.LocalDateTimeUtil;
 import com.darkstore.depot.model.dto.CreateStockRequestDto;
+import com.darkstore.depot.model.dto.UpdateStockRequestDto;
 import com.darkstore.depot.model.entity.Stock;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -17,5 +18,9 @@ public abstract class StockMapper {
     @Mapping(target = "createdDate", expression = "java(localDateTimeUtil.now())")
     @Mapping(target = "updatedDate", expression = "java(localDateTimeUtil.now())")
     public abstract Stock mapCreateStockRequestDtoToStock(CreateStockRequestDto requestDto);
+
+    @Mapping(target = "createdDate", expression = "java(localDateTimeUtil.now())")
+    @Mapping(target = "updatedDate", expression = "java(localDateTimeUtil.now())")
+    public abstract Stock mapUpdateStockRequestDtoToStock(UpdateStockRequestDto requestDto);
 
 }

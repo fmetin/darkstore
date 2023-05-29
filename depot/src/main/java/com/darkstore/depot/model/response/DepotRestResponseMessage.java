@@ -26,4 +26,5 @@ public class DepotRestResponseMessage extends RestResponseMessage {
     public final static String MSG_DPT_DEPOT_DOESNT_EXIST = "{depot.depot.doesnt.exist}";
     public final static String MSG_DPT_DEPOT_CLOSED = "{depot.depot.closed}";
     public final static String MSG_DPT_PRODUCT_DOESNT_EXIST = "{depot.product.doesnt.exist}";
+    public final static String MSG_DPT_STOCK_CANNOT_BE_LOWER_THAN_ZERO = "{depot.stock.cannot.be.lower.than.zero}";
 }

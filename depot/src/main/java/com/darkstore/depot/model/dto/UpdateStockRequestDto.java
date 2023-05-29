@@ -1,12 +1,10 @@
 package com.darkstore.depot.model.dto;
 
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import static com.darkstore.depot.model.response.DepotRestResponseMessage.*;
-import static com.darkstore.depot.model.response.DepotRestResponseMessage.MSG_VALIDATION_CONSTRAINT_SIZE;
 
 @Data
 public class UpdateStockRequestDto {
@@ -16,6 +14,5 @@ public class UpdateStockRequestDto {
     @NotNull(message = MSG_VALIDATION_CONSTRAINT_NOTNULL)
     @Size(min = 1, max = 255, message = MSG_VALIDATION_CONSTRAINT_SIZE)
     private String productName;
-    @Min(0)
     private long numberOfStock;
 }

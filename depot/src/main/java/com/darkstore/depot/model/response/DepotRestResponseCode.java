@@ -14,4 +14,5 @@ public class DepotRestResponseCode extends RestResponseCode {
     public static final RestResponseCode DPT_DEPOT_DOESNT_EXIST = new RestResponseCode("DPT-0005", DepotRestResponseMessage.MSG_DPT_DEPOT_DOESNT_EXIST);
     public static final RestResponseCode DPT_DEPOT_CLOSED = new RestResponseCode("DPT-0006", DepotRestResponseMessage.MSG_DPT_DEPOT_CLOSED);
     public static final RestResponseCode DPT_PRODUCT_DOESNT_EXIST = new RestResponseCode("DPT-0007", DepotRestResponseMessage.MSG_DPT_PRODUCT_DOESNT_EXIST);
+    public static final RestResponseCode DPT_STOCK_CANNOT_BE_LOWER_THAN_ZERO = new RestResponseCode("DPT-0008", DepotRestResponseMessage.MSG_DPT_STOCK_CANNOT_BE_LOWER_THAN_ZERO);
 }

@@ -2,6 +2,7 @@ package com.darkstore.depot.controller;
 
 import com.darkstore.depot.common.response.model.RestResponse;
 import com.darkstore.depot.model.dto.CreateStockRequestDto;
+import com.darkstore.depot.model.dto.UpdateStockListRequestDto;
 import com.darkstore.depot.model.dto.UpdateStockRequestDto;
 import com.darkstore.depot.service.StockService;
 import jakarta.validation.Valid;
@@ -32,6 +33,12 @@ public class StockController {
     @PostMapping("/v1/update-stock")
     public ResponseEntity<Object> updateStock(@Valid @RequestBody UpdateStockRequestDto request) {
         stockService.updateStock(request);
+        return ResponseEntity.ok(new RestResponse<>());
+    }
+
+    @PostMapping("/v1/update-stock-list")
+    public ResponseEntity<Object> updateStockList(@Valid @RequestBody UpdateStockListRequestDto request) {
+        stockService.updateStockList(request);
         return ResponseEntity.ok(new RestResponse<>());
     }
 }

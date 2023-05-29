@@ -7,8 +7,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 public interface StockRepository extends JpaRepository<Stock, Long> {
+    Optional<Stock> findByDepotNameAndProductName(String depotName, String productName);
     long countByDepotNameAndProductName(String depotName, String productName);
 
     @Transactional

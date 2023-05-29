@@ -17,6 +17,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>depot</module>
+        <module>transfer</module>
     </modules>
 
     <properties>
