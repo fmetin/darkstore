@@ -3,6 +3,7 @@ package com.darkstore.depot.common.exception;
 
 import com.darkstore.depot.common.response.model.RestResponse;
 import com.darkstore.depot.common.response.model.RestResponseHeader;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -20,6 +21,7 @@ import static com.darkstore.depot.common.response.model.RestResponseCode.VALIDAT
 
 
 @ControllerAdvice
+@Slf4j
 public class RestExceptionHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -49,9 +51,10 @@ public class RestExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody
     public RestResponse<Void> handleException(Exception e) {
+        log.error(UNKNOWN_ERROR.getlocalizedResponseMessage(), e);
         return new RestResponse<>(
                 new RestResponseHeader(UNKNOWN_ERROR.getResponseCode(),
                         UNKNOWN_ERROR.getlocalizedResponseMessage()),

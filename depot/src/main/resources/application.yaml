@@ -5,3 +5,8 @@ spring:
   datasource:
     url: jdbc:h2:mem:testdb
     username: fmetin
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    operations-sorter: method

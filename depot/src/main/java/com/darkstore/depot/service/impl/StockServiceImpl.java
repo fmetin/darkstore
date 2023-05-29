@@ -3,6 +3,7 @@ package com.darkstore.depot.service.impl;
 import com.darkstore.depot.common.exception.RestException;
 import com.darkstore.depot.mapper.StockMapper;
 import com.darkstore.depot.model.dto.CreateStockRequestDto;
+import com.darkstore.depot.model.dto.UpdateStockRequestDto;
 import com.darkstore.depot.model.entity.Depot;
 import com.darkstore.depot.model.enums.DepotStatusEnum;
 import com.darkstore.depot.model.enums.DepotTypeEnum;
@@ -13,7 +14,10 @@ import com.darkstore.depot.service.ProductService;
 import com.darkstore.depot.service.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -35,6 +39,21 @@ public class StockServiceImpl implements StockService {
     public void createStock(CreateStockRequestDto request) {
         checkCreateStockRequest(request);
         stockRepository.save(stockMapper.mapCreateStockRequestDtoToStock(request));
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public void updateStock(UpdateStockRequestDto request) {
+        checkUpdateRequest(request);
+        stockRepository.updateNumberOfStockAndUpdatedDateByDepotNameAndProductName(request.getNumberOfStock(), LocalDateTime.now(), request.getDepotName(), request.getProductName());
+    }
+
+    private void checkUpdateRequest(UpdateStockRequestDto request) {
+        if (productService.findByName(request.getProductName()).isEmpty())
+            throw new RestException(DepotRestResponseCode.DPT_PRODUCT_DOESNT_EXIST);
+        Optional<Depot> optionalDepot = depotService.findByDepotName(request.getDepotName());
+        if (optionalDepot.isEmpty())
+            throw new RestException(DepotRestResponseCode.DPT_DEPOT_DOESNT_EXIST);
     }
 
     private void checkCreateStockRequest(CreateStockRequestDto request) {

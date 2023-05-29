@@ -2,6 +2,7 @@ package com.darkstore.depot.controller;
 
 import com.darkstore.depot.common.response.model.RestResponse;
 import com.darkstore.depot.model.dto.CreateStockRequestDto;
+import com.darkstore.depot.model.dto.UpdateStockRequestDto;
 import com.darkstore.depot.service.StockService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,12 @@ public class StockController {
     @PostMapping("/v1/create-stock")
     public ResponseEntity<Object> createStock(@Valid @RequestBody CreateStockRequestDto request) {
         stockService.createStock(request);
+        return ResponseEntity.ok(new RestResponse<>());
+    }
+
+    @PostMapping("/v1/update-stock")
+    public ResponseEntity<Object> updateStock(@Valid @RequestBody UpdateStockRequestDto request) {
+        stockService.updateStock(request);
         return ResponseEntity.ok(new RestResponse<>());
     }
 }
