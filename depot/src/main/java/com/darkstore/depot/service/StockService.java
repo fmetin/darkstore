@@ -1,8 +1,6 @@
 package com.darkstore.depot.service;
 
-import com.darkstore.depot.model.dto.CreateStockRequestDto;
-import com.darkstore.depot.model.dto.UpdateStockListRequestDto;
-import com.darkstore.depot.model.dto.UpdateStockRequestDto;
+import com.darkstore.depot.model.dto.*;
 
 public interface StockService {
     void createStock(CreateStockRequestDto request);
@@ -10,4 +8,6 @@ public interface StockService {
     void updateStock(UpdateStockRequestDto request);
 
     void updateStockList(UpdateStockListRequestDto request);
+
+    StockInfoResponseDto stockInfo(StockInfoRequestDto request);
 }

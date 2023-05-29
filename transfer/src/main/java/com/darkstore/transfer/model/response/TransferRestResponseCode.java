@@ -7,6 +7,8 @@ public class TransferRestResponseCode extends RestResponseCode {
         super(responseCode, responseMessage);
     }
 
-    public static final RestResponseCode DPT_UNIQUE_DEPOT = new RestResponseCode("DPT-0001", TransferRestResponseMessage.MSG_DPT_UNIQUE_DEPOT);
+    public static final RestResponseCode TRN_DEPOT_HAS_NOT_ENOUGH_STOCK = new RestResponseCode("TRN-0001", TransferRestResponseMessage.MSG_TRN_DEPOT_HAS_NOT_ENOUGH_STOCK);
+    public static final RestResponseCode TRN_INTERCITY_TRANSFERS_CAN_ONLY_BE_MADE_FROM_THE_MAIN_DEPOT = new RestResponseCode("TRN-0002", TransferRestResponseMessage.MSG_TRN_INTERCITY_TRANSFERS_CAN_ONLY_BE_MADE_FROM_THE_MAIN_DEPOT);
+    public static final RestResponseCode TRN_DEPOT_CLIENT_ERROR = new RestResponseCode("TRN-0003", TransferRestResponseMessage.MSG_TRN_DEPOT_CLIENT_ERROR);
 
 }

@@ -11,4 +11,5 @@ public interface ProductService {
     long countByName(String name);
 
     Optional<Product> findByName(String name);
+    Product getProduct(String productName);
 }

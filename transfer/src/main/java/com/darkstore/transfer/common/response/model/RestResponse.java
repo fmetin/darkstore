@@ -1,6 +1,5 @@
 package com.darkstore.transfer.common.response.model;
 
-import com.darkstore.transfer.common.response.model.RestResponseHeader;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 

@@ -15,6 +15,7 @@ public class RestException extends RuntimeException {
     private String responseCode;
     private String responseMessage;
     private HttpStatus httpStatus = HttpStatus.OK;
+    private boolean translator = true;
 
     public RestException(RestResponseCode restResponseCode, HttpStatus httpStatus) {
         super(restResponseCode.getResponseMessage());
@@ -30,7 +31,7 @@ public class RestException extends RuntimeException {
     }
 
     public String getResponseMessage() {
-        return Translator.toLocale(responseMessage);
+        return translator ? Translator.toLocale(responseMessage) : responseMessage;
     }
 
 
