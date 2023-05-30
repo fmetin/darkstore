@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import static com.darkstore.transfer.client.depot.model.Properties.*;
+import static com.darkstore.transfer.common.properties.CommonProperties.DEPOT_CLIENT_BASE_URL;
 
 @Service
 @Slf4j
@@ -30,7 +31,7 @@ public class DepotClient {
     public StockInfoResponseDto stockInfo(StockInfoRequestDto requestDto) {
         String logErrorMessage = "method:stockInfo details: ";
         try {
-            ResponseEntity<StockInfoRestResponseDto> response = restTemplate.postForEntity(BASE_URL + STOCK_INFO, requestDto, StockInfoRestResponseDto.class);
+            ResponseEntity<StockInfoRestResponseDto> response = restTemplate.postForEntity(DEPOT_CLIENT_BASE_URL + STOCK_INFO, requestDto, StockInfoRestResponseDto.class);
             StockInfoRestResponseDto body = response.getBody();
             if (body == null)
                 throw new RestException(TransferRestResponseCode.TRN_DEPOT_CLIENT_ERROR);
@@ -49,7 +50,7 @@ public class DepotClient {
     public void updateStock(UpdateStockRequestDto requestDto) {
         String logErrorMessage = "method:updateStock details: ";
         try {
-            ResponseEntity<UpdateStockRestResponseDto> response = restTemplate.postForEntity(BASE_URL + UPDATE_STOCK, requestDto, UpdateStockRestResponseDto.class);
+            ResponseEntity<UpdateStockRestResponseDto> response = restTemplate.postForEntity(DEPOT_CLIENT_BASE_URL + UPDATE_STOCK, requestDto, UpdateStockRestResponseDto.class);
             UpdateStockRestResponseDto body = response.getBody();
             if (body == null)
                 throw new RestException(TransferRestResponseCode.TRN_DEPOT_CLIENT_ERROR);

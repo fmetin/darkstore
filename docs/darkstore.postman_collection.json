@@ -21,12 +21,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/v1/create-depot",
-					"protocol": "http",
+					"raw": "{{depot-api}}/v1/create-depot",
 					"host": [
-						"localhost"
+						"{{depot-api}}"
 					],
-					"port": "8081",
 					"path": [
 						"v1",
 						"create-depot"
@@ -50,12 +48,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/v1/create-depot",
-					"protocol": "http",
+					"raw": "{{depot-api}}/v1/create-depot",
 					"host": [
-						"localhost"
+						"{{depot-api}}"
 					],
-					"port": "8081",
 					"path": [
 						"v1",
 						"create-depot"
@@ -79,12 +75,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/v1/create-depot",
-					"protocol": "http",
+					"raw": "{{depot-api}}/v1/create-depot",
 					"host": [
-						"localhost"
+						"{{depot-api}}"
 					],
-					"port": "8081",
 					"path": [
 						"v1",
 						"create-depot"
@@ -108,44 +102,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/v1/create-depot",
-					"protocol": "http",
+					"raw": "{{depot-api}}/v1/create-depot",
 					"host": [
-						"localhost"
+						"{{depot-api}}"
 					],
-					"port": "8081",
 					"path": [
 						"v1",
 						"create-depot"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "shut-down-depot",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"depotName\": \"ankara-yenimahalle\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8081/v1/shut-down-depot",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"v1",
-						"shut-down-depot"
 					]
 				}
 			},
@@ -166,12 +129,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/v1/create-product",
-					"protocol": "http",
+					"raw": "{{depot-api}}/v1/create-product",
 					"host": [
-						"localhost"
+						"{{depot-api}}"
 					],
-					"port": "8081",
 					"path": [
 						"v1",
 						"create-product"
@@ -195,12 +156,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/v1/create-stock",
-					"protocol": "http",
+					"raw": "{{depot-api}}/v1/create-stock",
 					"host": [
-						"localhost"
+						"{{depot-api}}"
 					],
-					"port": "8081",
 					"path": [
 						"v1",
 						"create-stock"
@@ -224,12 +183,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/v1/create-stock",
-					"protocol": "http",
+					"raw": "{{depot-api}}/v1/create-stock",
 					"host": [
-						"localhost"
+						"{{depot-api}}"
 					],
-					"port": "8081",
 					"path": [
 						"v1",
 						"create-stock"
@@ -253,12 +210,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/v1/update-stock",
-					"protocol": "http",
+					"raw": "{{depot-api}}/v1/update-stock",
 					"host": [
-						"localhost"
+						"{{depot-api}}"
 					],
-					"port": "8081",
 					"path": [
 						"v1",
 						"update-stock"
@@ -294,12 +249,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8082/v1/transfer",
-					"protocol": "http",
+					"raw": "{{transfer-api}}/v1/transfer",
 					"host": [
-						"localhost"
+						"{{transfer-api}}"
 					],
-					"port": "8082",
 					"path": [
 						"v1",
 						"transfer"
@@ -335,12 +288,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8082/v1/transfer",
-					"protocol": "http",
+					"raw": "{{transfer-api}}/v1/transfer",
 					"host": [
-						"localhost"
+						"{{transfer-api}}"
 					],
-					"port": "8082",
 					"path": [
 						"v1",
 						"transfer"
@@ -376,12 +327,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8082/v1/transfer",
-					"protocol": "http",
+					"raw": "{{transfer-api}}/v1/transfer",
 					"host": [
-						"localhost"
+						"{{transfer-api}}"
 					],
-					"port": "8082",
 					"path": [
 						"v1",
 						"transfer"
@@ -417,12 +366,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8082/v1/transfer",
-					"protocol": "http",
+					"raw": "{{transfer-api}}/v1/transfer",
 					"host": [
-						"localhost"
+						"{{transfer-api}}"
 					],
-					"port": "8082",
 					"path": [
 						"v1",
 						"transfer"
@@ -458,12 +405,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8082/v1/transfer",
-					"protocol": "http",
+					"raw": "{{transfer-api}}/v1/transfer",
 					"host": [
-						"localhost"
+						"{{transfer-api}}"
 					],
-					"port": "8082",
 					"path": [
 						"v1",
 						"transfer"
@@ -499,12 +444,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8082/v1/transfer",
-					"protocol": "http",
+					"raw": "{{transfer-api}}/v1/transfer",
 					"host": [
-						"localhost"
+						"{{transfer-api}}"
 					],
-					"port": "8082",
 					"path": [
 						"v1",
 						"transfer"
@@ -540,12 +483,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8082/v1/transfer",
-					"protocol": "http",
+					"raw": "{{transfer-api}}/v1/transfer",
 					"host": [
-						"localhost"
+						"{{transfer-api}}"
 					],
-					"port": "8082",
 					"path": [
 						"v1",
 						"transfer"
@@ -581,12 +522,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8082/v1/transfer",
-					"protocol": "http",
+					"raw": "{{transfer-api}}/v1/transfer",
 					"host": [
-						"localhost"
+						"{{transfer-api}}"
 					],
-					"port": "8082",
 					"path": [
 						"v1",
 						"transfer"
@@ -622,12 +561,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8082/v1/transfer",
-					"protocol": "http",
+					"raw": "{{transfer-api}}/v1/transfer",
 					"host": [
-						"localhost"
+						"{{transfer-api}}"
 					],
-					"port": "8082",
 					"path": [
 						"v1",
 						"transfer"
@@ -651,12 +588,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8082/v1/approve-transfer",
-					"protocol": "http",
+					"raw": "{{transfer-api}}/v1/approve-transfer",
 					"host": [
-						"localhost"
+						"{{transfer-api}}"
 					],
-					"port": "8082",
 					"path": [
 						"v1",
 						"approve-transfer"
@@ -680,15 +615,94 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8082/v1/approve-transfer",
-					"protocol": "http",
+					"raw": "{{transfer-api}}/v1/approve-transfer",
 					"host": [
-						"localhost"
+						"{{transfer-api}}"
 					],
-					"port": "8082",
 					"path": [
 						"v1",
 						"approve-transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "shut-down-depot",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"depotName\": \"ankara-yenimahalle\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{depot-api}}/v1/shut-down-depot",
+					"host": [
+						"{{depot-api}}"
+					],
+					"path": [
+						"v1",
+						"shut-down-depot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "shut-down-depot-2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"depotName\": \"istanbul-kadıköy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{depot-api}}/v1/shut-down-depot",
+					"host": [
+						"{{depot-api}}"
+					],
+					"path": [
+						"v1",
+						"shut-down-depot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "shut-down-depot main",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"depotName\": \"istanbul-beşiktaş\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{depot-api}}/v1/shut-down-depot",
+					"host": [
+						"{{depot-api}}"
+					],
+					"path": [
+						"v1",
+						"shut-down-depot"
 					]
 				}
 			},

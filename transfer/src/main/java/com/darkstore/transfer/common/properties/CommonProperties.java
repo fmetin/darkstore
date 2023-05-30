@@ -16,9 +16,13 @@ public class CommonProperties {
     @Value("${trn.inner.city.transfer.max.distance:100}")
     private double innerCityTransferMaxDistance;
 
+    @Value("${trn.depot.client.base.url}")
+    private String depotClientBaseUrl;
+
     public static int REDIS_LOCK_TIMEOUT_SECONDS;
     public static int REDIS_LOCK_ACQUIRED_SECONDS;
     public static double INNER_CITY_TRANSFER_MAX_DISTANCE;
+    public static String DEPOT_CLIENT_BASE_URL;
 
     @Value("${redis.lock.timeout.seconds:3}")
     public void setRedisLockTimeoutSeconds(int value) {
@@ -33,5 +37,10 @@ public class CommonProperties {
     @Value("${trn.inner.city.transfer.max.distance:100}")
     public void setInnerCityTransferMaxDistance(double value) {
         CommonProperties.INNER_CITY_TRANSFER_MAX_DISTANCE = value;
+    }
+
+    @Value("${trn.depot.client.base.url}")
+    public void setDepotClientBaseUrl(String value) {
+        CommonProperties.DEPOT_CLIENT_BASE_URL = value;
     }
 }

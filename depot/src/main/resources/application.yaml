@@ -1,17 +1,16 @@
-server:
-  port: 8081
 spring:
   h2:
     console:
       enabled: true
+      settings:
+        web-allow-others: true
   datasource:
     url: jdbc:h2:mem:depotdb
     username: fmetin
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+    host: ${RABBITMQ_HOSTNAME:localhost}
+redis:
+  hostname: ${REDIS_HOSTNAME:localhost}
 springdoc:
   api-docs:
     path: /api-docs
