@@ -50,6 +50,8 @@ This microservice undertakes transfer operations. This service includes rabbitmq
 - Username: guest
 - Password: guest
 
+#### NOTE: There are postman collections in docs package. There are some example requests to consume depot and transfer service.
+
 ## Tech Stack
 - Java 17
 - Hibernate
