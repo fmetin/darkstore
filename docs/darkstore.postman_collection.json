@@ -1,712 +1,973 @@
 {
 	"info": {
-		"_postman_id": "d3a74a17-b024-429e-ad43-f18e97567fdc",
+		"_postman_id": "5bd9405d-40ad-4d0c-bd68-72950cecb2c4",
 		"name": "darkstore",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "24940273"
 	},
 	"item": [
 		{
-			"name": "create-depot MAIN",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"depotName\": \"istanbul-beşiktaş\",\r\n  \"type\": \"MAIN\",\r\n  \"city\":  \"istanbul\",\r\n  \"latitude\": \"41.043965724381806\",\r\n  \"longitude\":  \"29.004577536750112\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{depot-api}}/v1/create-depot",
-					"host": [
-						"{{depot-api}}"
-					],
-					"path": [
-						"v1",
-						"create-depot"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create-depot DISTRIBUTION_CENTER",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"depotName\": \"istanbul-kadıköy\",\r\n  \"type\": \"DISTRIBUTION_CENTER\",\r\n  \"city\":  \"istanbul\",\r\n  \"latitude\": \"41.043965724381806\",\r\n  \"longitude\":  \"29.004577536750112\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{depot-api}}/v1/create-depot",
-					"host": [
-						"{{depot-api}}"
-					],
-					"path": [
-						"v1",
-						"create-depot"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create-depot with fake coordinates DISTRIBUTION_CENTER",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"depotName\": \"ankara-çankaya\",\r\n  \"type\": \"DISTRIBUTION_CENTER\",\r\n  \"city\":  \"ankara\",\r\n  \"latitude\": \"39.97255035642641\",\r\n  \"longitude\":  \"32.71476708933878\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{depot-api}}/v1/create-depot",
-					"host": [
-						"{{depot-api}}"
-					],
-					"path": [
-						"v1",
-						"create-depot"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create-depot DISTRIBUTION_CENTER",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"depotName\": \"ankara-yenimahalle\",\r\n  \"type\": \"DISTRIBUTION_CENTER\",\r\n  \"city\":  \"ankara\",\r\n  \"latitude\": \"41.043965724381806\",\r\n  \"longitude\":  \"29.004577536750112\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{depot-api}}/v1/create-depot",
-					"host": [
-						"{{depot-api}}"
-					],
-					"path": [
-						"v1",
-						"create-depot"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create-product LUPPO",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"LUPPO\",\r\n  \"sku\": \"sku\",\r\n  \"barcode\":  \"barcode\",\r\n  \"type\": \"FOOD\",\r\n  \"isFrozen\":  false,\r\n  \"price\": 10,\r\n  \"unitType\":  \"BOX\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{depot-api}}/v1/create-product",
-					"host": [
-						"{{depot-api}}"
-					],
-					"path": [
-						"v1",
-						"create-product"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create-stock LUPPO -> MAIN",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"depotName\": \"istanbul-beşiktaş\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  99\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{depot-api}}/v1/create-stock",
-					"host": [
-						"{{depot-api}}"
-					],
-					"path": [
-						"v1",
-						"create-stock"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create-stock LUPPO -> DISTRIBUTION_CENTER",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"depotName\": \"ankara-yenimahalle\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  100\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{depot-api}}/v1/create-stock",
-					"host": [
-						"{{depot-api}}"
-					],
-					"path": [
-						"v1",
-						"create-stock"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "update-stock",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"depotName\": \"istanbul-beşiktaş\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  1\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{depot-api}}/v1/update-stock",
-					"host": [
-						"{{depot-api}}"
-					],
-					"path": [
-						"v1",
-						"update-stock"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "transfer",
-			"event": [
+			"name": "Depot",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"from\": \"istanbul-beşiktaş\",\r\n  \"to\": \"istanbul-kadıköy\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  10\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"name": "create-depot",
+					"item": [
+						{
+							"name": "create-depot MAIN",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"depotName\": \"istanbul-beşiktaş\",\r\n  \"type\": \"MAIN\",\r\n  \"city\":  \"istanbul\",\r\n  \"latitude\": \"41.043965724381806\",\r\n  \"longitude\":  \"29.004577536750112\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{depot-api}}/v1/create-depot",
+									"host": [
+										"{{depot-api}}"
+									],
+									"path": [
+										"v1",
+										"create-depot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create-depot DISTRIBUTION_CENTER",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"depotName\": \"istanbul-kadıköy\",\r\n  \"type\": \"DISTRIBUTION_CENTER\",\r\n  \"city\":  \"istanbul\",\r\n  \"latitude\": \"41.043965724381806\",\r\n  \"longitude\":  \"29.004577536750112\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{depot-api}}/v1/create-depot",
+									"host": [
+										"{{depot-api}}"
+									],
+									"path": [
+										"v1",
+										"create-depot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create-depot with fake coordinates DISTRIBUTION_CENTER",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"depotName\": \"ankara-çankaya\",\r\n  \"type\": \"DISTRIBUTION_CENTER\",\r\n  \"city\":  \"ankara\",\r\n  \"latitude\": \"39.97255035642641\",\r\n  \"longitude\":  \"32.71476708933878\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{depot-api}}/v1/create-depot",
+									"host": [
+										"{{depot-api}}"
+									],
+									"path": [
+										"v1",
+										"create-depot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create-depot DISTRIBUTION_CENTER",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"depotName\": \"ankara-yenimahalle\",\r\n  \"type\": \"DISTRIBUTION_CENTER\",\r\n  \"city\":  \"ankara\",\r\n  \"latitude\": \"41.043965724381806\",\r\n  \"longitude\":  \"29.004577536750112\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{depot-api}}/v1/create-depot",
+									"host": [
+										"{{depot-api}}"
+									],
+									"path": [
+										"v1",
+										"create-depot"
+									]
+								}
+							},
+							"response": []
 						}
-					}
-				},
-				"url": {
-					"raw": "{{transfer-api}}/v1/transfer",
-					"host": [
-						"{{transfer-api}}"
-					],
-					"path": [
-						"v1",
-						"transfer"
 					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "transfer inter-city-1",
-			"event": [
+				},
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"from\": \"istanbul-kadıköy\",\r\n  \"to\": \"ankara-yenimahalle\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  10\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"name": "shut-down-depot",
+					"item": [
+						{
+							"name": "shut-down-depot",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"depotName\": \"ankara-yenimahalle\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{depot-api}}/v1/shut-down-depot",
+									"host": [
+										"{{depot-api}}"
+									],
+									"path": [
+										"v1",
+										"shut-down-depot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "shut-down-depot-2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"depotName\": \"istanbul-kadıköy\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{depot-api}}/v1/shut-down-depot",
+									"host": [
+										"{{depot-api}}"
+									],
+									"path": [
+										"v1",
+										"shut-down-depot"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "shut-down-depot main",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"depotName\": \"istanbul-beşiktaş\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{depot-api}}/v1/shut-down-depot",
+									"host": [
+										"{{depot-api}}"
+									],
+									"path": [
+										"v1",
+										"shut-down-depot"
+									]
+								}
+							},
+							"response": []
 						}
-					}
-				},
-				"url": {
-					"raw": "{{transfer-api}}/v1/transfer",
-					"host": [
-						"{{transfer-api}}"
-					],
-					"path": [
-						"v1",
-						"transfer"
 					]
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "transfer inter-city-2",
-			"event": [
+			"name": "Product",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"from\": \"istanbul-beşiktaş\",\r\n  \"to\": \"ankara-yenimahalle\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  30\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"name": "create-product LUPPO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"LUPPO\",\r\n  \"sku\": \"sku\",\r\n  \"barcode\":  \"barcode\",\r\n  \"type\": \"FOOD\",\r\n  \"isFrozen\":  false,\r\n  \"price\": 10,\r\n  \"unitType\":  \"BOX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{depot-api}}/v1/create-product",
+							"host": [
+								"{{depot-api}}"
+							],
+							"path": [
+								"v1",
+								"create-product"
+							]
 						}
-					}
-				},
-				"url": {
-					"raw": "{{transfer-api}}/v1/transfer",
-					"host": [
-						"{{transfer-api}}"
-					],
-					"path": [
-						"v1",
-						"transfer"
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "transfer inter-city-3",
-			"event": [
+			"name": "Stock",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"from\": \"istanbul-beşiktaş\",\r\n  \"to\": \"ankara-yenimahalle\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  999\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"name": "create-stock LUPPO -> MAIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"depotName\": \"istanbul-beşiktaş\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{depot-api}}/v1/create-stock",
+							"host": [
+								"{{depot-api}}"
+							],
+							"path": [
+								"v1",
+								"create-stock"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{transfer-api}}/v1/transfer",
-					"host": [
-						"{{transfer-api}}"
-					],
-					"path": [
-						"v1",
-						"transfer"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "transfer inter-city-4",
-			"event": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"from\": \"istanbul-beşiktaş\",\r\n  \"to\": \"ankara-yenimahalle\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  -1\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"name": "create-stock LUPPO -> DISTRIBUTION_CENTER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"depotName\": \"ankara-yenimahalle\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{depot-api}}/v1/create-stock",
+							"host": [
+								"{{depot-api}}"
+							],
+							"path": [
+								"v1",
+								"create-stock"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{transfer-api}}/v1/transfer",
-					"host": [
-						"{{transfer-api}}"
-					],
-					"path": [
-						"v1",
-						"transfer"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "transfer inner-city-1",
-			"event": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"from\": \"ankara-yenimahalle\",\r\n  \"to\": \"ankara-çankaya\",\r\n  \"productName\": \"name\",\r\n  \"numberOfStock\":  50\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"name": "update-stock",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"depotName\": \"istanbul-beşiktaş\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{depot-api}}/v1/update-stock",
+							"host": [
+								"{{depot-api}}"
+							],
+							"path": [
+								"v1",
+								"update-stock"
+							]
 						}
-					}
-				},
-				"url": {
-					"raw": "{{transfer-api}}/v1/transfer",
-					"host": [
-						"{{transfer-api}}"
-					],
-					"path": [
-						"v1",
-						"transfer"
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "transfer inner-city-2",
-			"event": [
+			"name": "Transfer",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"from\": \"ankara-yenimahalle\",\r\n  \"to\": \"ankara-çankaya\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  50\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"name": "transfer",
+					"item": [
+						{
+							"name": "transfer",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"from\": \"istanbul-beşiktaş\",\r\n  \"to\": \"istanbul-kadıköy\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve-transfer COMPLETED Copy 4",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"transferId\": {{transferId}},\r\n  \"status\": \"COMPLETED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/approve-transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"approve-transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve-transfer FAILED",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"transferId\": {{transferId}},\r\n  \"status\": \"FAILED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/approve-transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"approve-transfer"
+									]
+								}
+							},
+							"response": []
 						}
-					}
-				},
-				"url": {
-					"raw": "{{transfer-api}}/v1/transfer",
-					"host": [
-						"{{transfer-api}}"
-					],
-					"path": [
-						"v1",
-						"transfer"
 					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "transfer inner-city-3",
-			"event": [
+				},
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"from\": \"ankara-yenimahalle\",\r\n  \"to\": \"ankara-çankaya\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  10\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"name": "transfer inter city and approve",
+					"item": [
+						{
+							"name": "transfer inter-city-1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"from\": \"istanbul-kadıköy\",\r\n  \"to\": \"ankara-yenimahalle\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve-transfer COMPLETED Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"transferId\": {{transferId}},\r\n  \"status\": \"COMPLETED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/approve-transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"approve-transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transfer inter-city-2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"from\": \"istanbul-beşiktaş\",\r\n  \"to\": \"ankara-yenimahalle\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  30\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve-transfer COMPLETED Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"transferId\": {{transferId}},\r\n  \"status\": \"COMPLETED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/approve-transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"approve-transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transfer inter-city-3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"from\": \"istanbul-beşiktaş\",\r\n  \"to\": \"ankara-yenimahalle\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  999\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve-transfer COMPLETED Copy 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"transferId\": {{transferId}},\r\n  \"status\": \"COMPLETED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/approve-transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"approve-transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transfer inter-city-4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"from\": \"istanbul-beşiktaş\",\r\n  \"to\": \"ankara-yenimahalle\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  -1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve-transfer COMPLETED Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"transferId\": {{transferId}},\r\n  \"status\": \"COMPLETED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/approve-transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"approve-transfer"
+									]
+								}
+							},
+							"response": []
 						}
-					}
-				},
-				"url": {
-					"raw": "{{transfer-api}}/v1/transfer",
-					"host": [
-						"{{transfer-api}}"
-					],
-					"path": [
-						"v1",
-						"transfer"
 					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "transfer inner-city-4",
-			"event": [
+				},
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var jsonData = JSON.parse(responseBody);\r",
-							"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"from\": \"ankara-yenimahalle\",\r\n  \"to\": \"ankara-çankaya\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  10\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"name": "transfer inner city and approve",
+					"item": [
+						{
+							"name": "transfer inner-city-1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"from\": \"ankara-yenimahalle\",\r\n  \"to\": \"ankara-çankaya\",\r\n  \"productName\": \"name\",\r\n  \"numberOfStock\":  50\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve-transfer COMPLETED Copy 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"transferId\": {{transferId}},\r\n  \"status\": \"COMPLETED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/approve-transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"approve-transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transfer inner-city-2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"from\": \"ankara-yenimahalle\",\r\n  \"to\": \"ankara-çankaya\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  50\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve-transfer COMPLETED Copy 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"transferId\": {{transferId}},\r\n  \"status\": \"COMPLETED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/approve-transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"approve-transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transfer inner-city-3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"from\": \"ankara-yenimahalle\",\r\n  \"to\": \"ankara-çankaya\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve-transfer COMPLETED Copy 3",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"transferId\": {{transferId}},\r\n  \"status\": \"COMPLETED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/approve-transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"approve-transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transfer inner-city-4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"from\": \"ankara-yenimahalle\",\r\n  \"to\": \"ankara-çankaya\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve-transfer COMPLETED",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"transferId\": {{transferId}},\r\n  \"status\": \"COMPLETED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{transfer-api}}/v1/approve-transfer",
+									"host": [
+										"{{transfer-api}}"
+									],
+									"path": [
+										"v1",
+										"approve-transfer"
+									]
+								}
+							},
+							"response": []
 						}
-					}
-				},
-				"url": {
-					"raw": "{{transfer-api}}/v1/transfer",
-					"host": [
-						"{{transfer-api}}"
-					],
-					"path": [
-						"v1",
-						"transfer"
 					]
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "approve-transfer COMPLETED",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"transferId\": {{transferId}},\r\n  \"status\": \"COMPLETED\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{transfer-api}}/v1/approve-transfer",
-					"host": [
-						"{{transfer-api}}"
-					],
-					"path": [
-						"v1",
-						"approve-transfer"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "approve-transfer FAILED",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"transferId\": {{transferId}},\r\n  \"status\": \"FAILED\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{transfer-api}}/v1/approve-transfer",
-					"host": [
-						"{{transfer-api}}"
-					],
-					"path": [
-						"v1",
-						"approve-transfer"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "shut-down-depot",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"depotName\": \"ankara-yenimahalle\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{depot-api}}/v1/shut-down-depot",
-					"host": [
-						"{{depot-api}}"
-					],
-					"path": [
-						"v1",
-						"shut-down-depot"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "shut-down-depot-2",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"depotName\": \"istanbul-kadıköy\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{depot-api}}/v1/shut-down-depot",
-					"host": [
-						"{{depot-api}}"
-					],
-					"path": [
-						"v1",
-						"shut-down-depot"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "shut-down-depot main",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"depotName\": \"istanbul-beşiktaş\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{depot-api}}/v1/shut-down-depot",
-					"host": [
-						"{{depot-api}}"
-					],
-					"path": [
-						"v1",
-						"shut-down-depot"
-					]
-				}
-			},
-			"response": []
+			]
 		}
 	]
 }
