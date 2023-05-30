@@ -7,8 +7,21 @@ spring:
   datasource:
     url: jdbc:h2:mem:depotdb
     username: fmetin
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 springdoc:
   api-docs:
     path: /api-docs
   swagger-ui:
     operations-sorter: method
+rabbitmq:
+  shutDownQueue:
+    name: shut_down_queue
+  exchange:
+    name: darkstore_exchange
+  shutDown:
+    routing:
+      key: shut_down_routing_key

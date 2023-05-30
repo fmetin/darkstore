@@ -1,5 +1,6 @@
 package com.darkstore.transfer.model.dto;
 
+import com.darkstore.transfer.model.enums.TransferTypeEnum;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -19,4 +20,6 @@ public class TransferRequestDto {
     private String productName;
     @Min(1)
     private long numberOfStock;
+    private TransferTypeEnum transferType = TransferTypeEnum.DEPOT_TRANSFER;
+
 }

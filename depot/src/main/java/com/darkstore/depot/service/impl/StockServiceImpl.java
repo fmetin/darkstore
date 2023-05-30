@@ -22,6 +22,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -85,6 +86,11 @@ public class StockServiceImpl implements StockService {
         productService.getProduct(request.getProductName());
         responseDto.setHasStock(getStock(request.getFrom(), request.getProductName()).getNumberOfStock() >= request.getNumberOfStock());
         return responseDto;
+    }
+
+    @Override
+    public List<Stock> findByDepotNameAndNumberOfStock(String depotName) {
+        return stockRepository.findByDepotNameAndNumberOfStockGreaterThan(depotName, 0);
     }
 
     private long checkUpdateRequest(UpdateStockRequestDto request) {

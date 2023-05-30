@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"depotName\": \"istanbul-beşiktaş\",\r\n  \"type\": \"MAIN\",\r\n  \"city\":  \"istanbul\",\r\n  \"latitude\": \"1.111111\",\r\n  \"longitude\":  \"1.16666\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
+					"raw": "{\r\n  \"depotName\": \"istanbul-beşiktaş\",\r\n  \"type\": \"MAIN\",\r\n  \"city\":  \"istanbul\",\r\n  \"latitude\": \"41.043965724381806\",\r\n  \"longitude\":  \"29.004577536750112\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -42,7 +42,36 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"depotName\": \"istanbul-kadıköy\",\r\n  \"type\": \"DISTRIBUTION_CENTER\",\r\n  \"city\":  \"istanbul\",\r\n  \"latitude\": \"1.111111\",\r\n  \"longitude\":  \"1.16666\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
+					"raw": "{\r\n  \"depotName\": \"istanbul-kadıköy\",\r\n  \"type\": \"DISTRIBUTION_CENTER\",\r\n  \"city\":  \"istanbul\",\r\n  \"latitude\": \"41.043965724381806\",\r\n  \"longitude\":  \"29.004577536750112\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/v1/create-depot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"create-depot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-depot with fake coordinates DISTRIBUTION_CENTER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"depotName\": \"ankara-çankaya\",\r\n  \"type\": \"DISTRIBUTION_CENTER\",\r\n  \"city\":  \"ankara\",\r\n  \"latitude\": \"39.97255035642641\",\r\n  \"longitude\":  \"32.71476708933878\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -71,7 +100,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"depotName\": \"ankara-çankaya\",\r\n  \"type\": \"DISTRIBUTION_CENTER\",\r\n  \"city\":  \"ankara\",\r\n  \"latitude\": \"1.111111\",\r\n  \"longitude\":  \"1.16666\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
+					"raw": "{\r\n  \"depotName\": \"ankara-yenimahalle\",\r\n  \"type\": \"DISTRIBUTION_CENTER\",\r\n  \"city\":  \"ankara\",\r\n  \"latitude\": \"41.043965724381806\",\r\n  \"longitude\":  \"29.004577536750112\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -94,13 +123,13 @@
 			"response": []
 		},
 		{
-			"name": "create-depot DISTRIBUTION_CENTER",
+			"name": "shut-down-depot",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"depotName\": \"ankara-yenimahalle\",\r\n  \"type\": \"DISTRIBUTION_CENTER\",\r\n  \"city\":  \"ankara\",\r\n  \"latitude\": \"1.111111\",\r\n  \"longitude\":  \"1.16666\",\r\n  \"status\": \"OPEN\",\r\n  \"costCenter\":  \"costCenter\"\r\n}",
+					"raw": "{\r\n  \"depotName\": \"ankara-yenimahalle\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -108,7 +137,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/v1/create-depot",
+					"raw": "http://localhost:8081/v1/shut-down-depot",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -116,7 +145,7 @@
 					"port": "8081",
 					"path": [
 						"v1",
-						"create-depot"
+						"shut-down-depot"
 					]
 				}
 			},
@@ -339,7 +368,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"from\": \"istanbul-beşiktaş\",\r\n  \"to\": \"ankara-yenimahalle\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  10\r\n}",
+					"raw": "{\r\n  \"from\": \"istanbul-beşiktaş\",\r\n  \"to\": \"ankara-yenimahalle\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  30\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -462,7 +491,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"from\": \"ankara-yenimahalle\",\r\n  \"to\": \"ankara-çankaya\",\r\n  \"productName\": \"name\",\r\n  \"numberOfStock\":  20\r\n}",
+					"raw": "{\r\n  \"from\": \"ankara-yenimahalle\",\r\n  \"to\": \"ankara-çankaya\",\r\n  \"productName\": \"name\",\r\n  \"numberOfStock\":  50\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -503,7 +532,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"from\": \"ankara-yenimahalle\",\r\n  \"to\": \"ankara-çankaya\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  20\r\n}",
+					"raw": "{\r\n  \"from\": \"ankara-yenimahalle\",\r\n  \"to\": \"ankara-çankaya\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  50\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -527,6 +556,47 @@
 		},
 		{
 			"name": "transfer inner-city-3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"transferId\", jsonData.detail.transferId);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"from\": \"ankara-yenimahalle\",\r\n  \"to\": \"ankara-çankaya\",\r\n  \"productName\": \"LUPPO\",\r\n  \"numberOfStock\":  10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/v1/transfer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transfer inner-city-4",
 			"event": [
 				{
 					"listen": "test",

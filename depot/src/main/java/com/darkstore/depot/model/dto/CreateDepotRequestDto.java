@@ -22,10 +22,10 @@ public class CreateDepotRequestDto {
     @NotNull(message = MSG_VALIDATION_CONSTRAINT_CITY_NOTNULL)
     private String city;
     @NotNull(message = MSG_VALIDATION_CONSTRAINT_LATITUDE_NOTNULL)
-    @Pattern(regexp="^(\\+|-)?(?:90(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\\.[0-9]{1,6})?))$", message = MSG_VALIDATION_CONSTRAINT_LATITUDE_PATTERN)
+//    @Pattern(regexp="^(\\+|-)?(?:90(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-8][0-9])(?:(?:\\.[0-9]{1,6})?))$", message = MSG_VALIDATION_CONSTRAINT_LATITUDE_PATTERN)
     private String latitude;
     @NotNull(message = MSG_VALIDATION_CONSTRAINT_LONGITUDE_NOTNULL)
-    @Pattern(regexp="^(\\+|-)?(?:180(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\\.[0-9]{1,6})?))$", message = MSG_VALIDATION_CONSTRAINT_LONGITUDE_PATTERN)
+//    @Pattern(regexp="^(\\+|-)?(?:180(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\\.[0-9]{1,6})?))$", message = MSG_VALIDATION_CONSTRAINT_LONGITUDE_PATTERN)
     private String longitude;
     @NotNull(message = MSG_VALIDATION_CONSTRAINT_STATUS_NOTNULL)
     private DepotStatusEnum status;

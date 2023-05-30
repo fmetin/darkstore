@@ -2,6 +2,7 @@ package com.darkstore.depot.service;
 
 import com.darkstore.depot.model.dto.CreateDepotRequestDto;
 import com.darkstore.depot.model.dto.DepotInfoResponseDto;
+import com.darkstore.depot.model.dto.ShutDownDepotRequestDto;
 import com.darkstore.depot.model.entity.Depot;
 
 import java.util.Optional;

@@ -12,3 +12,11 @@ springdoc:
     path: /api-docs
   swagger-ui:
     operations-sorter: method
+rabbitmq:
+  shutDownQueue:
+    name: shut_down_queue
+  exchange:
+    name: darkstore_exchange
+  shutDown:
+    routing:
+      key: shut_down_routing_key

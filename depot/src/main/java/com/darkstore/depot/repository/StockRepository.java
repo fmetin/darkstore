@@ -7,11 +7,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 public interface StockRepository extends JpaRepository<Stock, Long> {
     Optional<Stock> findByDepotNameAndProductName(String depotName, String productName);
     long countByDepotNameAndProductName(String depotName, String productName);
+
+    List<Stock> findByDepotNameAndNumberOfStockGreaterThan(String depotName, long numberOfStock);
 
     @Transactional
     @Modifying
