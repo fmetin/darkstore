@@ -61,5 +61,6 @@ This microservice undertakes transfer operations. This service includes rabbitmq
 - Redis
 - RabbitMQ
 - Swagger UI
+- Mapstruct
 - Docker
 
